@@ -1,30 +1,18 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using September2020.Helpers;
 using September2020.Pages;
 using System;
 using System.Threading;
 
 namespace September2020
 {
-    [TestFixture]
-    class Program
+    [TestFixture, Description("This fixture contains Time and Material tests")]
+    [Parallelizable]
+    class Program : CommonDriver
     {
-        // init driver
-        IWebDriver driver;
-
-        [SetUp]
-        public void LoginToTurnUp()
-        {
-            // define webdriver
-            driver = new ChromeDriver();
-
-            // Object init and define for login page
-            LoginPage loginObj = new LoginPage();
-            loginObj.LoginSteps(driver);
-        }
-
-        [Test]
+        [Test, Description("Check if the user is able to create time successfully")]
         public void CreateNewTMTest()
         {
             // Object init and define for home page
@@ -38,7 +26,7 @@ namespace September2020
             tmObj.CreateTM(driver);
         }
 
-        [Test]
+        [Test, Description("Check if the user is able to edit time successfully")]
         public void EditTMTest()
         {
             // Object init and define for home page
@@ -52,7 +40,7 @@ namespace September2020
             tmObj.EditTM(driver);
         }
 
-        [Test]
+        [Test, Description("Check if the user is able to delete time successfully")]
         public void DeleteTMTest()
         {
             // Object init and define for home page
@@ -65,14 +53,6 @@ namespace September2020
             TMPage tmObj = new TMPage();
             tmObj.DeleteTM(driver);
         }
-
-        [TearDown]
-        public void TestClosure()
-        {
-            // close instances of open chrome driver 
-            driver.Quit();
-        }
-
     }
 
 

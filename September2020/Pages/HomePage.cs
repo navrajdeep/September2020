@@ -18,5 +18,10 @@ namespace September2020.Pages
             driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a")).Click();
             Thread.Sleep(1000);
         }
+
+        public void NavigateToCompany(IWebDriver driver)
+        {
+            // To-do - steps to navigate to Company page
+        }
     }
 }
