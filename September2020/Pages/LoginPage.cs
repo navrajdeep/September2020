@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
@@ -29,17 +30,20 @@ namespace September2020.Pages
             IWebElement loginButton = driver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
             loginButton.Click();
 
-            // validate if the user had logged in successfully
-            IWebElement helloHari = driver.FindElement(By.XPath("//*[@id='logoutForm']/ul/li/a"));
+            try
+            {
+                // validate if the user had logged in successfully
+                IWebElement helloHari = driver.FindElement(By.XPath("//*[@id='logoutForm']/ul/li/a"));
+                Assert.That(helloHari.Text == "Hello hari!");
 
-            if (helloHari.Text == "Hello hari!")
-            {
-                Console.WriteLine("Logged in successfully, test passed");
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("Login failed, test failed");
+                Assert.Fail("Test failed at login step", ex.Message);
             }
+
+
+
         }
     }
 }

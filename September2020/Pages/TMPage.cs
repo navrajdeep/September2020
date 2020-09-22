@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -40,12 +41,16 @@ namespace September2020.Pages
 
             if (expectedCode.Text == "Sep2020")
             {
-                Console.WriteLine("Time record created successfully, Test 1 passed");
+                // option 1 - using assert pass and fail on a if condition
+                Assert.Pass("Time record created successfully, Test 1 passed");
             }
             else
             {
-                Console.WriteLine("Unable to find the record created, Test Failed");
+                Assert.Fail("Unable to find the record created, Test Failed");
             }
+
+            // option 2 - use assert that
+            Assert.That(expectedCode.Text, Is.EqualTo("Sep2020"));
         }
 
         public void EditTM(IWebDriver driver)

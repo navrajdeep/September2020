@@ -13,7 +13,7 @@ namespace September2020.Helpers
         // init driver
         public static IWebDriver driver;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void LoginToTurnUp()
         {
             // define webdriver
@@ -24,7 +24,7 @@ namespace September2020.Helpers
             loginObj.LoginSteps(driver);
         }
 
-        [TearDown]
+        [OneTimeTearDown]
         public void TestClosure()
         {
             // close instances of open chrome driver 
