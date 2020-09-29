@@ -13,7 +13,7 @@ namespace September2020.Test
     [Parallelizable]
     class CompanyTests : CommonDriver
     {
-        [Test, Description("Check if the user is able to create company successfully")]
+        [Test, Order(1), Description("Check if the user is able to create company successfully")]
         public void CreateNewCompanyTest()
         {
             // Object init and define for home page
@@ -27,7 +27,7 @@ namespace September2020.Test
             companyObj.CreateCompany(driver);
         }
 
-        [Test, Description("Check if the user is able to edit comapny successfully")]
+        [Test, Order(2), Description("Check if the user is able to edit comapny successfully")]
         public void EditCompanyTest()
         {
             // Object init and define for home page
@@ -41,7 +41,7 @@ namespace September2020.Test
             companyObj.EditCompany(driver);
         }
 
-        [Test, Description("Check if the user is able to delete company successfully")]
+        [Test, Order(3), Description("Check if the user is able to delete company successfully")]
         public void DeleteCompanyTest()
         {
             // Object init and define for home page

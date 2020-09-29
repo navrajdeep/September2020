@@ -17,7 +17,7 @@ namespace September2020.Helpers
         public void LoginToTurnUp()
         {
             // define webdriver
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(".");
 
             // Object init and define for login page
             LoginPage loginObj = new LoginPage();
@@ -28,7 +28,7 @@ namespace September2020.Helpers
         public void TestClosure()
         {
             // close instances of open chrome driver 
-            driver.Quit();
+           // driver.Quit();
         }
     }
 }
