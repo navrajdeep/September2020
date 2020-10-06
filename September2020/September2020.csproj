@@ -12,10 +12,7 @@
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="85.0.4183.8700" />
-    <PackageReference Include="Microsoft.NETCore.App" Version="$(RuntimeFrameworkVersion)">
-      <AllowExplicitVersion>true</AllowExplicitVersion>
-    </PackageReference>
-    <PackageReference Include="SpecFlow" Version="3.4.8" />
+    <PackageReference Include="SpecFlow" Version="3.4.14" />
   </ItemGroup>
 
 </Project>
